@@ -20,6 +20,7 @@ class ActorInjector extends AbstractModule with AkkaGuiceSupport {
     bindActor[ClientLogsAPIService](name = "client-log-actor")
     bindActor[DruidHealthCheckService](name = "druid-health-actor")
     bindActor[ReportAPIService](name = "report-actor")
+    bindActor[GroupAggregateActor](name = "group-agg-actor")
 
     // Services
     APILogger.init("org.ekstep.analytics-api")
