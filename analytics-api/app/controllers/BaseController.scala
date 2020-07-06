@@ -35,6 +35,6 @@ class BaseController(cc: ControllerComponents, configuration: Configuration) ext
             case "FORBIDDEN" =>
                 Forbidden(res)
         }
-        resultObj.withHeaders(CONTENT_TYPE -> "application/json")
+        resultObj.as("application/json")
     }
 }

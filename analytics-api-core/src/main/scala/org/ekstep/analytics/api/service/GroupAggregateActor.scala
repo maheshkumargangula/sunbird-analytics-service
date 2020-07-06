@@ -6,7 +6,6 @@ import org.ekstep.analytics.api.{APIIds, Response}
 
 class GroupAggregateActor extends Actor {
 
-    receive
     override def receive: PartialFunction[Any, Unit] = {
         case _ => activityAggregate
     }
