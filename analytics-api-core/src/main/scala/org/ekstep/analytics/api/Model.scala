@@ -155,3 +155,7 @@ case class ReportResponse(reportId: String, reportDescription: String, createdBy
 
 case class ReportFilter(request: ListReportFilter)
 case class ListReportFilter(filters: Map[String,List[String]])
+
+// Group API's
+case class GroupActivityRequest(groupId: String, activityId: String, activityType: String, fields: Option[Array[String]])
+case class GroupActivityRequestBody(id: String, ver: String, ts: String, request: GroupActivityRequest, params: Option[Params])
