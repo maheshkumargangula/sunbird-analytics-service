@@ -7,7 +7,7 @@ import org.ekstep.analytics.api.{APIIds, Response}
 class GroupAggregateActor extends Actor {
 
     override def receive: PartialFunction[Any, Unit] = {
-        case _ => activityAggregate
+        case _ => sender() ! activityAggregate
     }
 
     def activityAggregate(): Response = {
