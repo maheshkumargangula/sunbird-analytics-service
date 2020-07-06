@@ -31,7 +31,7 @@ class Application @Inject() (@Named("client-log-actor") clientLogAPIActor: Actor
   def checkAPIhealth() = Action.async { request: Request[AnyContent] =>
     val result = healthCheckService.getHealthStatus();
     Future {
-      Ok(result).withHeaders(CONTENT_TYPE -> "application/json");      
+      Ok(result).as("application/json")
     }
   }
 

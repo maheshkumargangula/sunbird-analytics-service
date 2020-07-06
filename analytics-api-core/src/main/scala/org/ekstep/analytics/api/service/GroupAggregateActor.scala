@@ -11,6 +11,7 @@ class GroupAggregateActor extends Actor {
     }
 
     def activityAggregate(): Response = {
+        println("Working... Actor...")
         CommonUtil.OK(APIIds.GROUP_ACTIVITY_AGG_REQUEST, Map())
     }
 }

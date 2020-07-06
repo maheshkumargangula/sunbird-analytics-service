@@ -11,6 +11,7 @@ class ActorInjector extends AbstractModule with AkkaGuiceSupport {
   override def configure(): Unit = {
     val actorConfig = new FromConfig()
     // Actor Binding
+    bindActor[GroupAggregateActor](name = "group-agg-actor")
     bindActor[DeviceRegisterService](name = "device-register-actor", _.withRouter(actorConfig))
     bindActor[DeviceProfileService](name = "device-profile-actor", _.withRouter(actorConfig))
     bindActor[ExperimentAPIService](name = "experiment-actor")
@@ -20,7 +21,7 @@ class ActorInjector extends AbstractModule with AkkaGuiceSupport {
     bindActor[ClientLogsAPIService](name = "client-log-actor")
     bindActor[DruidHealthCheckService](name = "druid-health-actor")
     bindActor[ReportAPIService](name = "report-actor")
-    bindActor[GroupAggregateActor](name = "group-agg-actor")
+
 
     // Services
     APILogger.init("org.ekstep.analytics-api")
